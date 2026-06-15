@@ -77,6 +77,7 @@ const collapsed = ref(false)
 const navItems = [
   { path: '/', label: 'dashboard', icon: '⊞' },
   { path: '/profile', label: 'profile', icon: '◉' },
+  { path: '/projects', label: 'projects', icon: '◫' },
   { path: '/skills', label: 'skills', icon: '◈' },
   { path: '/currently', label: 'currently', icon: '◎' },
   { path: '/github', label: 'github', icon: '◆' },
