@@ -80,6 +80,7 @@ const navItems = [
   { path: '/skills', label: 'skills', icon: '◈' },
   { path: '/currently', label: 'currently', icon: '◎' },
   { path: '/github', label: 'github', icon: '◆' },
+  { path: '/wakatime', label: 'wakatime', icon: '◷' },
   { path: '/integrations', label: 'integrations', icon: '⊕' },
 ]
 

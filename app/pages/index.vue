@@ -47,6 +47,13 @@
           </div>
         </div>
 
+        <div class="border border-gray-800 bg-gray-900">
+          <p class="text-gray-500 text-xs font-mono px-4 py-3 border-b border-gray-800">// coding today</p>
+          <div class="p-4">
+            <WakaStats :settings="wakaSettings" />
+          </div>
+        </div>
+
         <div class="border border-gray-800 p-4 bg-gray-900">
           <p class="text-gray-500 text-xs font-mono mb-3">// profile</p>
           <p class="font-mono text-white text-sm">{{ profile?.name ?? '—' }}</p>
@@ -64,17 +71,20 @@ const github = ref<any>(null)
 const skills = ref<any[]>([])
 const profile = ref<any>(null)
 const currently = ref<any[]>([])
+const wakaSettings = ref<any>(null)
 
 onMounted(async () => {
-  const [g, s, p, c] = await Promise.all([
+  const [g, s, p, c, w] = await Promise.all([
     get('/api/github'),
     get('/api/skills'),
     get('/api/profile'),
     get('/api/currently'),
+    get('/api/wakatime/settings'),
   ])
   github.value = g
   skills.value = s
   profile.value = p
   currently.value = c
+  wakaSettings.value = w
 })
 </script>
