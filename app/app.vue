@@ -79,6 +79,7 @@ const navItems = [
   { path: '/profile', label: 'profile', icon: '◉' },
   { path: '/skills', label: 'skills', icon: '◈' },
   { path: '/currently', label: 'currently', icon: '◎' },
+  { path: '/github', label: 'github', icon: '◆' },
   { path: '/integrations', label: 'integrations', icon: '⊕' },
 ]
 

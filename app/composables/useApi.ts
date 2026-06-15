@@ -32,6 +32,16 @@ export const useApi = () => {
     return handleResponse(res)
   }
 
+  const patch = async (path: string, body: unknown) => {
+    const res = await fetch(`${baseUrl}${path}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      credentials: 'include',
+    })
+    return handleResponse(res)
+  }
+  
   const del = async (path: string) => {
     const res = await fetch(`${baseUrl}${path}`, {
       method: 'DELETE',
@@ -39,6 +49,6 @@ export const useApi = () => {
     })
     return handleResponse(res)
   }
-
-  return { get, post, del }
+  
+  return { get, post, patch, del }
 }
