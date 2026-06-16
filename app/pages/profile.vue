@@ -57,6 +57,21 @@
               <input v-model="form.githubUsername"
                 class="w-full bg-gray-800 border border-gray-700 px-3 py-2 text-sm font-mono text-white focus:border-pink-400 outline-none" />
             </div>
+            <div>
+              <label class="font-mono text-xs text-gray-500 mb-1 block">email</label>
+              <input v-model="form.email"
+                class="w-full bg-gray-800 border border-gray-700 px-3 py-2 text-sm font-mono text-white focus:border-pink-400 outline-none" />
+            </div>
+            <div>
+              <label class="font-mono text-xs text-gray-500 mb-1 block">telegram</label>
+              <input v-model="form.telegramUsername" placeholder="@username"
+                class="w-full bg-gray-800 border border-gray-700 px-3 py-2 text-sm font-mono text-white focus:border-pink-400 outline-none" />
+            </div>
+            <div>
+              <label class="font-mono text-xs text-gray-500 mb-1 block">discord</label>
+              <input v-model="form.discordUsername" placeholder="@username"
+                class="w-full bg-gray-800 border border-gray-700 px-3 py-2 text-sm font-mono text-white focus:border-pink-400 outline-none" />
+            </div>
           </div>
         </div>
 
@@ -88,6 +103,9 @@ const form = ref({
   location: '',
   description: '',
   githubUsername: '',
+  email: '',
+  telegramUsername: '',
+  discordUsername: '',
   available: true,
 })
 
