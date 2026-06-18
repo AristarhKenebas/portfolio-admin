@@ -5,14 +5,12 @@
         <div v-if="$route.path === '/login'" class="fixed inset-0 flex items-center justify-center">
           <NuxtPage />
         </div>
+        
         <template v-else>
-
-          <!-- Sidebar -->
           <aside :class="[
             'border-r border-gray-800 bg-gray-900 flex flex-col transition-all duration-300',
             collapsed ? 'w-14' : 'w-56'
           ]">
-            <!-- Logo -->
             <div class="flex items-center justify-between px-3 py-4 border-b border-gray-800">
               <span v-if="!collapsed" class="font-mono text-pink-400 text-sm font-bold">portfolio/admin</span>
               <button @click="collapsed = !collapsed"
@@ -21,7 +19,6 @@
               </button>
             </div>
 
-            <!-- Nav -->
             <nav class="flex flex-col gap-1 p-2 flex-1">
               <NuxtLink v-for="item in navItems" :key="item.path" :to="item.path"
                 class="flex items-center gap-3 px-2 py-2 font-mono text-sm transition-colors rounded"
@@ -33,7 +30,6 @@
               </NuxtLink>
             </nav>
 
-            <!-- Bottom -->
             <div class="p-2 border-t border-gray-800">
               <button @click="logout"
                 class="flex items-center gap-3 px-2 py-2 font-mono text-sm text-gray-600 hover:text-red-400 transition-colors w-full rounded hover:bg-gray-800">
@@ -43,9 +39,7 @@
             </div>
           </aside>
 
-          <!-- Main -->
           <div class="flex-1 flex flex-col min-w-0">
-            <!-- Topbar -->
             <header class="border-b border-gray-800 px-6 py-3 flex items-center justify-between">
               <p class="font-mono text-xs text-gray-600">{{ currentPageTitle }}</p>
               <div class="flex items-center gap-3">
@@ -58,7 +52,6 @@
               <NuxtPage />
             </main>
           </div>
-
         </template>
       </template>
 
@@ -103,6 +96,7 @@ onMounted(async () => {
   const updateTime = () => {
     currentTime.value = new Date().toLocaleTimeString('uk-UA', { hour: '2-digit', minute: '2-digit' })
   }
+
   updateTime()
   setInterval(updateTime, 1000)
 })
@@ -114,6 +108,11 @@ const logout = async () => {
 </script>
 
 <style>
-* { box-sizing: border-box; }
-body { margin: 0; font-family: 'Inter', sans-serif; }
+* { 
+  box-sizing: border-box; 
+}
+body { 
+  margin: 0; 
+  font-family: 'Inter', sans-serif; 
+}
 </style>
